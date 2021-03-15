@@ -16,6 +16,10 @@
             <intent-filter>
                 <action android:name="android.intent.action.AIRPLANE_MODE" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.example.broadcastpractice.myaction" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </receiver>
 
         <activity android:name=".MainActivity">

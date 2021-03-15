@@ -1,8 +1,10 @@
 package com.example.broadcastpractice
 
+import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         // myReceiver ?: MyReceiver()
 
         val intentFilter = IntentFilter().apply {
+            addAction(AIRPLANE_ACTION)
             addAction(MY_ACTION)
         }
 
@@ -48,5 +51,10 @@ class MainActivity : AppCompatActivity() {
         this.unregisterReceiver(myReceiver)
 
         // myReceiver = null
+    }
+
+    fun sendBroadcast(v: View) {
+        val intent = Intent(MY_ACTION)
+        sendBroadcast(intent)
     }
 }

@@ -14,4 +14,5 @@ class MyReceiver : BroadcastReceiver() {
     }
 }
 
-val MY_ACTION = Intent.ACTION_AIRPLANE_MODE_CHANGED
+val AIRPLANE_ACTION = Intent.ACTION_AIRPLANE_MODE_CHANGED
+val MY_ACTION = "com.example.broadcastpractice.myaction"

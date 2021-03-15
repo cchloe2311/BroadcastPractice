@@ -6,7 +6,8 @@ import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
 
-    private var myReceiver : MyReceiver? = null
+    //private var myReceiver : MyReceiver? = null
+    private var myReceiver = MyReceiver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
      */
 
     private fun registerReceiver() {
-        myReceiver ?: MyReceiver()
+        // myReceiver ?: MyReceiver()
 
         val intentFilter = IntentFilter().apply {
             addAction(MY_ACTION)
@@ -46,6 +47,6 @@ class MainActivity : AppCompatActivity() {
     private fun unregisterReceiver() {
         this.unregisterReceiver(myReceiver)
 
-        myReceiver = null
+        // myReceiver = null
     }
 }
